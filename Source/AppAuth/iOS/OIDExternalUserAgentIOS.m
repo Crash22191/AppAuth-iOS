@@ -54,14 +54,14 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic pop
 }
 
-- (nullable instancetype)init {
+- (instancetype)init {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wnonnull"
   return [self initWithPresentingViewController:nil];
 #pragma clang diagnostic pop
 }
 
-- (nullable instancetype)initWithPresentingViewController:
+- (instancetype)initWithPresentingViewController:
     (UIViewController *)presentingViewController {
   self = [super init];
   if (self) {
@@ -69,7 +69,7 @@ NS_ASSUME_NONNULL_BEGIN
     NSAssert(presentingViewController != nil,
              @"presentingViewController cannot be nil on iOS 13");
 #endif // __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
-    
+
     _presentingViewController = presentingViewController;
   }
   return self;
@@ -184,16 +184,16 @@ NS_ASSUME_NONNULL_BEGIN
     if (completion) completion();
     return;
   }
-  
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wpartial-availability"
   SFSafariViewController *safariVC = _safariVC;
   SFAuthenticationSession *authenticationVC = _authenticationVC;
   ASWebAuthenticationSession *webAuthenticationVC = _webAuthenticationVC;
 #pragma clang diagnostic pop
-  
+
   [self cleanUp];
-  
+
   if (webAuthenticationVC) {
     // dismiss the ASWebAuthenticationSession
     [webAuthenticationVC cancel];
