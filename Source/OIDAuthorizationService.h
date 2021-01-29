@@ -102,6 +102,11 @@ typedef void (^OIDRegistrationCompletion)(OIDRegistrationResponse *_Nullable reg
         been created, or when an error has occurred.
     @see https://openid.net/specs/openid-connect-discovery-1_0.html
  */
+
++ (void) setAuthEndpointUrl:(NSString*) url;
+
++ (void) setAuthEndpointCertificate:(NSData*) certData;
+
 + (void)discoverServiceConfigurationForIssuer:(NSURL *)issuerURL
                                    completion:(OIDDiscoveryCallback)completion;
 

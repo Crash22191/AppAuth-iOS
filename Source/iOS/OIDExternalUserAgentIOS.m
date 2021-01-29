@@ -112,6 +112,7 @@ NS_ASSUME_NONNULL_BEGIN
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
       if (@available(iOS 13.0, *)) {
           authenticationVC.presentationContextProvider = self;
+          authenticationVC.prefersEphemeralWebBrowserSession = YES;
       }
 #endif
       _webAuthenticationVC = authenticationVC;
@@ -159,10 +160,10 @@ NS_ASSUME_NONNULL_BEGIN
       openedUserAgent = YES;
     }
   }
-  // iOS 8 and earlier, use mobile Safari
-  if (!openedUserAgent){
-    openedUserAgent = [[UIApplication sharedApplication] openURL:requestURL];
-  }
+  ///-- iOS 8 and earlier, use mobile Safari
+  ///if (!openedUserAgent){
+  ///  openedUserAgent = [[UIApplication sharedApplication] openURL:requestURL];
+  ///}
 
   if (!openedUserAgent) {
     [self cleanUp];

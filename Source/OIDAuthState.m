@@ -475,7 +475,7 @@ static const NSUInteger kExpiryTimeTolerance = 60;
   if ([self isTokenFresh]) {
     // access token is valid within tolerance levels, perform action
     dispatch_async(dispatchQueue, ^{
-      action(self.accessToken, self.idToken, nil);
+        action(self.accessToken, self.accessTokenExpirationDate, self.idToken, nil);
     });
     return;
   }
@@ -487,7 +487,7 @@ static const NSUInteger kExpiryTimeTolerance = 60;
                       underlyingError:nil
                           description:@"Unable to refresh expired token without a refresh token."];
     dispatch_async(dispatchQueue, ^{
-        action(nil, nil, tokenRefreshError);
+        action(nil, nil, nil, tokenRefreshError);
     });
     return;
   }
@@ -538,7 +538,7 @@ static const NSUInteger kExpiryTimeTolerance = 60;
     }
     for (OIDAuthStatePendingAction* actionToProcess in actionsToProcess) {
       dispatch_async(actionToProcess.dispatchQueue, ^{
-        actionToProcess.action(self.accessToken, self.idToken, error);
+          actionToProcess.action(self.accessToken, self.accessTokenExpirationDate, self.idToken, error);
       });
     }
   }];
@@ -566,5 +566,4 @@ static const NSUInteger kExpiryTimeTolerance = 60;
 }
 
 @end
-
 

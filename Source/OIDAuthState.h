@@ -36,8 +36,9 @@ NS_ASSUME_NONNULL_BEGIN
     @param error The error if an error occurred.
  */
 typedef void (^OIDAuthStateAction)(NSString *_Nullable accessToken,
+                                   NSDate   *_Nullable accessExpiry,
                                    NSString *_Nullable idToken,
-                                   NSError *_Nullable error);
+                                   NSError  *_Nullable error);
 
 /*! @brief The method called when the @c
         OIDAuthState.authStateByPresentingAuthorizationRequest:presentingViewController:callback:
