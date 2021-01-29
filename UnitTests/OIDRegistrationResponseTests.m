@@ -20,13 +20,8 @@
 
 #import "OIDClientMetadataParameters.h"
 #import "OIDRegistrationRequestTests.h"
-
-#if SWIFT_PACKAGE
-@import AppAuthCore;
-#else
-#import "Source/AppAuthCore/OIDRegistrationRequest.h"
-#import "Source/AppAuthCore/OIDRegistrationResponse.h"
-#endif
+#import "Source/OIDRegistrationRequest.h"
+#import "Source/OIDRegistrationResponse.h"
 
 /*! @brief The test value for the @c clientID property.
  */

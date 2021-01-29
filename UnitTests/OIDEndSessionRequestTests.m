@@ -19,14 +19,9 @@
 #import "OIDEndSessionRequestTests.h"
 
 #import "OIDServiceDiscoveryTests.h"
-
-#if SWIFT_PACKAGE
-@import AppAuthCore;
-#else
-#import "Source/AppAuthCore/OIDEndSessionRequest.h"
-#import "Source/AppAuthCore/OIDServiceConfiguration.h"
-#import "Source/AppAuthCore/OIDServiceDiscovery.h"
-#endif
+#import "Source/OIDEndSessionRequest.h"
+#import "Source/OIDServiceConfiguration.h"
+#import "Source/OIDServiceDiscovery.h"
 
 /*! @brief Test value for the @c redirectURL property.
  */

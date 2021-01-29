@@ -16,10 +16,6 @@
         limitations under the License.
  */
 
-#import <TargetConditionals.h>
-
-#if TARGET_OS_IOS || TARGET_OS_MACCATALYST
-
 #import "OIDAuthState+IOS.h"
 #import "OIDExternalUserAgentIOS.h"
 #import "OIDExternalUserAgentCatalyst.h"
@@ -54,5 +50,3 @@
 #endif // !TARGET_OS_MACCATALYST
 
 @end
-
-#endif // TARGET_OS_IOS || TARGET_OS_MACCATALYST

@@ -18,11 +18,8 @@
 
 #import <XCTest/XCTest.h>
 
-#if SWIFT_PACKAGE
-@import AppAuthCore;
-#else
-#import "Source/AppAuthCore/OIDTokenUtilities.h"
-#endif
+#import "Source/OIDTokenUtilities.h"
+
 
 @interface OIDTokenUtilitiesTests : XCTestCase
 @end

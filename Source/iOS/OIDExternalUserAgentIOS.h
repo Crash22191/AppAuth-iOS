@@ -16,10 +16,6 @@
         limitations under the License.
  */
 
-#import <TargetConditionals.h>
-
-#if TARGET_OS_IOS || TARGET_OS_MACCATALYST
-
 #import <UIKit/UIKit.h>
 
 #import "OIDExternalUserAgent.h"
@@ -32,9 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
         depending on the version of iOS to present the request.
  */
 API_UNAVAILABLE(macCatalyst)
-@interface OIDExternalUserAgentIOS : NSObject <OIDExternalUserAgent>
+@interface OIDExternalUserAgentIOS : NSObject<OIDExternalUserAgent>
 
-- (instancetype)init API_AVAILABLE(ios(11))
+- (nullable instancetype)init API_AVAILABLE(ios(11))
     __deprecated_msg("This method will not work on iOS 13, use "
                      "initWithPresentingViewController:presentingViewController");
 
@@ -42,12 +38,10 @@ API_UNAVAILABLE(macCatalyst)
     @param presentingViewController The view controller from which to present the
         \SFSafariViewController.
  */
-- (instancetype)initWithPresentingViewController:
+- (nullable instancetype)initWithPresentingViewController:
     (UIViewController *)presentingViewController
     NS_DESIGNATED_INITIALIZER;
 
 @end
 
 NS_ASSUME_NONNULL_END
-
-#endif // TARGET_OS_IOS || TARGET_OS_MACCATALYST

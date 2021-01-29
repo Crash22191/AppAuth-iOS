@@ -19,14 +19,9 @@
 #import "OIDRegistrationRequestTests.h"
 
 #import "OIDServiceConfigurationTests.h"
-
-#if SWIFT_PACKAGE
-@import AppAuthCore;
-#else
-#import "Source/AppAuthCore/OIDClientMetadataParameters.h"
-#import "Source/AppAuthCore/OIDRegistrationRequest.h"
-#import "Source/AppAuthCore/OIDServiceConfiguration.h"
-#endif
+#import "Source/OIDClientMetadataParameters.h"
+#import "Source/OIDRegistrationRequest.h"
+#import "Source/OIDServiceConfiguration.h"
 
 /*! @brief Test key for the @c additionalParameters property.
  */

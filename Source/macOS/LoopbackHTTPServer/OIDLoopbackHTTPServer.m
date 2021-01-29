@@ -16,10 +16,6 @@
         limitations under the License.
  */
 
-#import <TargetConditionals.h>
-
-#if TARGET_OS_OSX
-
 #import "OIDLoopbackHTTPServer.h"
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -614,5 +610,3 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
 @end
 
 #pragma GCC diagnostic pop
-
-#endif // TARGET_OS_OSX
